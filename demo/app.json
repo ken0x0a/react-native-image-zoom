@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "23.0.0"
+    "name": "react-native-image-zoom",
+    "version": "1.0.0",
+    "slug": "react-native-image-zoom",
+    "sdkVersion": "32.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "orientation": "portrait",
+    "primaryColor": "#D9D9D9",
+    "scheme": "react-native-image-zoom"
   }
 }

@@ -1,27 +1,31 @@
-import React from 'react';
+import * as React from 'react';
 import { Image, Dimensions } from 'react-native';
-import ImageZoom from './built/index';
+import { SplashScreen } from 'expo';
+import ImageZoom from './built';
+
+const img = require('./file_1080.jpg');
+const { width, height } = Dimensions.get('window');
 
 export default class App extends React.Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
   render() {
     return (
       <ImageZoom
-        cropWidth={Dimensions.get('window').width}
-        cropHeight={Dimensions.get('window').height}
-        imageWidth={Dimensions.get('window').width}
-        imageHeight={Dimensions.get('window').height}
-        enableSwipeDown={true}
+        cropWidth={width}
+        cropHeight={height}
+        imageWidth={width}
+        imageHeight={height}
+        // enableSwipeDown={true}
       >
         <Image
           enableHorizontalBounce={true}
           style={{
-            width: Dimensions.get('window').width,
-            height: Dimensions.get('window').height
+            width: width,
+            height: height
           }}
-          source={{
-            uri:
-              'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522606437962&di=f93f5c645225a5681155ebcde27b257f&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0159fa5944bcd3a8012193a34b762d.jpg%402o.jpg'
-          }}
+          source={img}
         />
       </ImageZoom>
     );
